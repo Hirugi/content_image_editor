@@ -16,9 +16,9 @@ class ImageProcessor:
         _color_limits = image_settings.get('color_limits')
         if _color_limits:
             color_limits = (
-                _color_limits['red'], _color_limits['green'], _color_limits['blue'])
+                _color_limits['red'], _color_limits['green'], _color_limits['blue'], _color_limits['alpha'])
         else:
-            color_limits = (255, 255, 255)
+            color_limits = (255, 255, 255, 0)
 
         im = image
 
@@ -48,7 +48,7 @@ class ImageProcessor:
         return im
 
     @staticmethod
-    def _crop_to_actual_image(image: Image, color_limits=(252, 252, 252)):
+    def _crop_to_actual_image(image: Image, color_limits=(252, 252, 252, 0)):
         """
         Crop image to actual image, oriented by set color limits
         :param image: Image object
@@ -62,7 +62,10 @@ class ImageProcessor:
         data = numpy.array(_image)
         red, green, blue, alpha = data.T
 
-        white_areas = ((red >= color_limits[0]) & (green >= color_limits[1]) & (blue >= color_limits[2]))
+        white_areas = (
+            ((red >= color_limits[0]) & (green >= color_limits[1]) & (blue >= color_limits[2])) |
+            (alpha <= color_limits[3])
+        )
         data[...,][white_areas.T] = (255, 255, 255, 0)
 
         _image = Image.fromarray(data)

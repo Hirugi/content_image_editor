@@ -27,6 +27,7 @@ class MainSettings(QDialog):
         self.ui.spinBox_crop_red.setValue(self.config.config['output_image_settings']['color_limits']['red'])
         self.ui.spinBox_crop_green.setValue(self.config.config['output_image_settings']['color_limits']['green'])
         self.ui.spinBox_crop_blue.setValue(self.config.config['output_image_settings']['color_limits']['blue'])
+        self.ui.spinBox_crop_alpha.setValue(self.config.config['output_image_settings']['color_limits']['alpha'])
 
         self.ui.spinBox_quality.setValue(self.config.config['output_image_settings']['quality'])
 
@@ -60,7 +61,8 @@ class MainSettings(QDialog):
                 'color_limits': {
                     'red': self.ui.spinBox_crop_red.value(),
                     'green': self.ui.spinBox_crop_green.value(),
-                    'blue': self.ui.spinBox_crop_blue.value()
+                    'blue': self.ui.spinBox_crop_blue.value(),
+                    'alpha': self.ui.spinBox_crop_alpha.value()
                 }
             }
 

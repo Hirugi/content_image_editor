@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'new_main_settings.ui'
+# Form implementation generated from reading ui file '..\content_image_editor\ui\main_settings.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.0
 #
@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(284, 351)
+        Dialog.resize(381, 363)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -42,7 +42,7 @@ class Ui_Dialog(object):
         self.label_directory_selection.setObjectName("label_directory_selection")
         self.gridLayout.addWidget(self.label_directory_selection, 0, 0, 1, 1)
         self.verticalLayout.addLayout(self.gridLayout)
-        spacerItem = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        spacerItem = QtWidgets.QSpacerItem(20, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.verticalLayout.addItem(spacerItem)
         self.label_input_formats = QtWidgets.QLabel(Dialog)
         self.label_input_formats.setObjectName("label_input_formats")
@@ -50,7 +50,7 @@ class Ui_Dialog(object):
         self.lineEdit_input_formats = QtWidgets.QLineEdit(Dialog)
         self.lineEdit_input_formats.setObjectName("lineEdit_input_formats")
         self.verticalLayout.addWidget(self.lineEdit_input_formats)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.verticalLayout.addItem(spacerItem1)
         self.label_crop_size = QtWidgets.QLabel(Dialog)
         self.label_crop_size.setObjectName("label_crop_size")
@@ -79,7 +79,7 @@ class Ui_Dialog(object):
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout.addItem(spacerItem2)
         self.verticalLayout.addLayout(self.horizontalLayout)
-        spacerItem3 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.verticalLayout.addItem(spacerItem3)
         self.label_cropping_color_limits = QtWidgets.QLabel(Dialog)
         self.label_cropping_color_limits.setObjectName("label_cropping_color_limits")
@@ -98,6 +98,7 @@ class Ui_Dialog(object):
         self.label_crop_green.setObjectName("label_crop_green")
         self.horizontalLayout_2.addWidget(self.label_crop_green)
         self.spinBox_crop_green = QtWidgets.QSpinBox(Dialog)
+        self.spinBox_crop_green.setBaseSize(QtCore.QSize(45, 19))
         self.spinBox_crop_green.setButtonSymbols(QtWidgets.QAbstractSpinBox.PlusMinus)
         self.spinBox_crop_green.setMaximum(255)
         self.spinBox_crop_green.setObjectName("spinBox_crop_green")
@@ -110,10 +111,19 @@ class Ui_Dialog(object):
         self.spinBox_crop_blue.setMaximum(255)
         self.spinBox_crop_blue.setObjectName("spinBox_crop_blue")
         self.horizontalLayout_2.addWidget(self.spinBox_crop_blue)
+        self.label_crop_alpha = QtWidgets.QLabel(Dialog)
+        self.label_crop_alpha.setObjectName("label_crop_alpha")
+        self.horizontalLayout_2.addWidget(self.label_crop_alpha)
+        self.spinBox_crop_alpha = QtWidgets.QSpinBox(Dialog)
+        self.spinBox_crop_alpha.setBaseSize(QtCore.QSize(45, 19))
+        self.spinBox_crop_alpha.setButtonSymbols(QtWidgets.QAbstractSpinBox.PlusMinus)
+        self.spinBox_crop_alpha.setMaximum(255)
+        self.spinBox_crop_alpha.setObjectName("spinBox_crop_alpha")
+        self.horizontalLayout_2.addWidget(self.spinBox_crop_alpha)
         spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_2.addItem(spacerItem4)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
-        spacerItem5 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        spacerItem5 = QtWidgets.QSpacerItem(20, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         self.verticalLayout.addItem(spacerItem5)
         self.label_quality = QtWidgets.QLabel(Dialog)
         self.label_quality.setObjectName("label_quality")
@@ -153,14 +163,5 @@ class Ui_Dialog(object):
         self.label_crop_red.setText(_translate("Dialog", "Red"))
         self.label_crop_green.setText(_translate("Dialog", "Green"))
         self.label_crop_blue.setText(_translate("Dialog", "Blue"))
+        self.label_crop_alpha.setText(_translate("Dialog", "Alpha"))
         self.label_quality.setText(_translate("Dialog", "Quality"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Dialog = QtWidgets.QDialog()
-    ui = Ui_Dialog()
-    ui.setupUi(Dialog)
-    Dialog.show()
-    sys.exit(app.exec_())

@@ -7,7 +7,7 @@ class Configuration:
     APP_CONFIG_FOLDER = f'{os.getenv("APPDATA")}\ImageEditor'
     APP_CONFIG_FILE = f'{APP_CONFIG_FOLDER}\config.json'
     DEFAULT_CONFIG = {
-        'config_version': 35,
+        'config_version': 36,
         'input_directory': f'{USER_DOCUMENTS_FOLDER}\ImageEditor\input',
         'output_directory': f'{USER_DOCUMENTS_FOLDER}\ImageEditor\output',
         'output_image_settings': {
@@ -17,7 +17,8 @@ class Configuration:
             'color_limits': {
                 'red': 252,
                 'green': 252,
-                'blue': 252
+                'blue': 252,
+                'alpha': 10
             }
         },
         'input_formats': ['.jpg', '.jpeg', '.png', '.webp', '.jfif', '.gif', '.tiff'],
